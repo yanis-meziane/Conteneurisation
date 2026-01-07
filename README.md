@@ -260,3 +260,128 @@ ingnum/
 └── docker-compose.yml
 ```
 
+# TP3 : Kubernetes
+
+## Installation de kubernetes 
+
+> L'installation de Kubernetes se fait sur ce [lien](https://minikube.sigs.k8s.io/docs/start/?arch=%2Fmacos%2Fx86-64%2Fstable%2Fbinary+download)
+
+> Pour MacOS, il sera nécessaire de faire cette commande : 
+
+```bash
+curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-darwin-arm64
+sudo install minikube-darwin-arm64 /usr/local/bin/minikube
+``` 
+
+## Vérififaction et création d'un déploiement Kubernetes
+
+> Pour vérifier : 
+
+```bash
+kubectl get nodes
+```
+
+> Pour créer un déploiement : 
+
+```bash
+kubectl create deployment myservice --image={imageDocker}
+```
+
+> Pour visualiser les container Kubernetes :
+
+```bash
+kubectl get nodes
+```
+
+> Pour rentrer dans un container : 
+
+```bash
+kubectl exec -it podname -- /bin/bash
+````
+
+*Ajouter capture pour montrer l\'exemple*
+
+## Exposition des container/routes pour les lancer dans l'URL
+
+1. **L\'exposition**
+
+```bash
+kubectl expose deployment myservice --type=NodePort --port=8080
+````
+
+2. **Retrouver l'URL et la copier-coller dans la barre de recherche**
+
+```bash
+minikube service myservice --url
+```
+
+> Une fois l'URL obtenue :
+
+```bash
+http://{URL}/bonjour
+```
+
+Vous obtiendrez `bonjour`
+
+*Exemple :* 
+
+*Ajouter les images*
+
+# Le scaling et les cluster
+
+## Définitions
+
+> Le **scaling** avec Kubernetes désigne la capacité d’adapter dynamiquement les ressources d’une application en fonction de la charge. L’objectif est d’assurer de bonnes performances tout en optimisant l’utilisation des ressources.
+
+> Un **cluster** Kubernetes est un ensemble de machines (physiques ou virtuelles) qui travaillent ensemble pour exécuter des applications conteneurisées.
+
+## Organisation
+
+1. *Checker si un container est actuellement en train de tourner :*
+
+```bash
+kubectl get deployments
+```
+
+2. *Checker combien d'instance sont en train de tourner :*
+
+```bash
+kubectl get pods
+```
+
+*Ajouter photo scaling* 
+
+> Le **scaling** est utile pour dupliquer le code lorsque plusieurs utilisations sont à prévoir par plusieurs utilisateurs. 
+
+# Création d'un service de type LoadBalancer
+
+1. ```bash
+    kubectl get deployments
+    ````
+2. ```bash
+    # Si un service tourne déjà, il sera nécessaire de le supprimer en premier avant d\'en créer un autre. 
+
+    kubectl get services
+    ```
+
+    ```bash
+    kubectl delete service serviceName
+    kubectl expose deployment serviceName --type=LoadBalancer --port=8080
+    minikube service serviceName --url
+    ```
+
+    *Erreurs et difficultés rencontrées à cet endroit*
+
+    *Ajouter photo pour .yml*
+
+    # Ingress 
+
+    1. ```bash
+        minikube addons enable ingress
+        ```
+2 . *Vérification que Le controller de NGINX Ingress est en train de tourner* 
+
+```bash
+kubectl get pods -n ingress-nginx
+````
+
