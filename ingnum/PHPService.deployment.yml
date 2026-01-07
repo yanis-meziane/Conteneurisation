@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-service
+  template:
+    metadata:
+      labels:
+        app: php-service
+    spec:
+      containers:
+        - image: hellfir/phpservice:latest
+          imagePullPolicy: IfNotPresent
+          name: php-service
+      restartPolicy: Always
