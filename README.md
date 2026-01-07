@@ -298,8 +298,12 @@ kubectl get nodes
 ```bash
 kubectl exec -it podname -- /bin/bash
 ````
+<img width="1898" height="318" alt="Image 07-01-2026 à 17 01" src="https://github.com/user-attachments/assets/19932d0a-20f1-426e-9aee-47e7b7a95fc1" />
+<img width="1326" height="186" alt="Image 07-01-2026 à 16 53" src="https://github.com/user-attachments/assets/0a380635-1f1c-4570-8cc4-b28d71ad0c38" />
+<img width="2880" height="322" alt="Image 07-01-2026 à 16 38 (1)" src="https://github.com/user-attachments/assets/fd6f320c-fdca-4486-bd5f-0adb4ac0b68e" />
+<img width="1948" height="276" alt="Image 07-01-2026 à 16 38" src="https://github.com/user-attachments/assets/4088e9d5-8b6d-479e-8fb8-5068ce32d06c" />
 
-*Ajouter capture pour montrer l\'exemple*
+
 
 ## Exposition des container/routes pour les lancer dans l'URL
 
@@ -324,8 +328,11 @@ http://{URL}/bonjour
 Vous obtiendrez `bonjour`
 
 *Exemple :* 
+<img width="206" height="88" alt="Image 07-01-2026 à 17 10" src="https://github.com/user-attachments/assets/ab3f99ca-0565-4930-bcc4-9e29b9bfc71a" />
+<img width="448" height="86" alt="Image 07-01-2026 à 17 09 (1)" src="https://github.com/user-attachments/assets/8b78a794-9514-4d33-8581-8e55ffcd3edc" />
+<img width="1374" height="170" alt="Image 07-01-2026 à 17 09" src="https://github.com/user-attachments/assets/e4a4d0e4-799f-4fc7-9d82-f8a658f2d2aa" />
 
-*Ajouter les images*
+
 
 # Le scaling et les cluster
 
@@ -348,8 +355,10 @@ kubectl get deployments
 ```bash
 kubectl get pods
 ```
+<img width="1130" height="90" alt="Image 07-01-2026 à 17 58" src="https://github.com/user-attachments/assets/c808c8ca-55df-41c1-9568-e844f986024e" />
+<img width="1408" height="568" alt="Image 07-01-2026 à 17 31" src="https://github.com/user-attachments/assets/b5eb28da-8592-4562-aea0-0dbb847507b3" />
 
-*Ajouter photo scaling* 
+
 
 > Le **scaling** est utile pour dupliquer le code lorsque plusieurs utilisations sont à prévoir par plusieurs utilisateurs. 
 
@@ -372,7 +381,6 @@ kubectl get pods
 
     *Erreurs et difficultés rencontrées à cet endroit*
 
-    *Ajouter photo pour .yml*
 
     # Ingress 
 
