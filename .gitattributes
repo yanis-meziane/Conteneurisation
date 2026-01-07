@@ -1,0 +1,6 @@
+# Fichiers Windows - garder CRLF
+*.bat text eol=crlf
+
+# Scripts shell Unix - forcer LF
+*.sh text eol=lf
+gradlew text eol=lf
